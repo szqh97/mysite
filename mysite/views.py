@@ -1,6 +1,7 @@
 import datetime
 from django.template import Context
 from django.http import HttpResponse
+from django.shortcuts import render_to_response
 from django.template.loader import get_template
 
 def hello(request):
@@ -8,6 +9,5 @@ def hello(request):
 
 def current_datetime(request):
     now = datetime.datetime.now()
-    t = get_template('current_datetime.html')
-    html = t.render(Context({'now': now}))
-    return HttpResponse(html)
+    title = "KKK"
+    return render_to_response('mypage.html', locals())
