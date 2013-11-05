@@ -1,8 +1,10 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail
 from models import *
 from django.views.decorators.csrf import csrf_protect
+from django.core.context_processors import csrf
+from django.template import RequestContext
 
 def search_form(request):
     return render_to_response('search_form.html')
@@ -21,14 +23,14 @@ def search(request):
         query = request.GET['q']
         if not query:
             error = True
-        elif len(q) > 20:
+        elif len(query) > 20:
             error = True
         else:
             books = Book.objects.filter(title__icontains = query)
             return render_to_response('search_results.html', locals())
     return render_to_response('search_form.html', locals())
 
-@csrf_protect
+#@csrf_protect
 def contact(request):
     errors = []
     if request.method == 'POST':
@@ -45,7 +47,8 @@ def contact(request):
                 request.POST.get('e-mail', 'li_yun@vobile.cn'),
                 ['szqh97@163.com'],
             )
-            #return HttpResponseRedirect('/contact/thanks/')
-            return HttpResponseRedirect('hello.html')
-    return render_to_response('contact_form.html', RequestContext({'errors': errors}))
+            return HttpResponseRedirect('/hello/')
+            #return HttpResponseRedirect('/hello/')
+    return render_to_response('contact_form.html',{'errors': errors})
+    #return render(request, 'contact_form.html',{'errors': errors})
 

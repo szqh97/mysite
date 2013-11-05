@@ -159,5 +159,8 @@ LOGGING = {
     }
 }
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 25
+EMAIL_HOST = 'mail.vobile.cn'
+EMAIL_PORT = '25'
+EMAIL_HOST_USER = 'li_yun@vobile.cn'
+EMAIL_HOST_PASSWORD = 'lbsEM2'
+EMAIL_USE_TLS = False
