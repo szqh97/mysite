@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="style/tool.jquery.css" rel="stylesheet" />
+<link href="style/style.css" rel="stylesheet" />
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/tool.jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#addServer").showLayer("float-box-add-new-task");
+})
+</script>
+</head>
+<body>
+<div class="float-box" id="float-box-add-new-task">
+  <div class="float-box-top bg">Add New Task <a class="float-box-close layer-close"><img src="images/close.png" /></a></div>
+  <div class="float-box-center">
+    <div class="form-line">
+      <div class="form-title">Task Name:</div>
+      <input type="text" class="inputtext" />
+    </div>
+    <div class="form-line">
+      <div class="form-title">Star Time:</div>
+      <div class="time-box">
+        <input type="text" maxlength="2" onfocus="this.select()" size="2" value="00" />:<input onfocus="this.select()" type="text" maxlength="2" size="2" value="00"/>:<input onfocus="this.select()" value="00" type="text" maxlength="2" size="2"/>
+      </div>
+      <div class="check-box">(<label><input type="checkbox" />Right Now</label>)</div>
+      <div class="form-title form-title2">Star Date:</div>
+      <div class="date-box">
+        <input type="text" class="inputtext" />
+      </div>
+    </div>
+    <div class="form-line">
+      <div class="form-title">End Time:</div>
+      <div class="time-box">
+        <input type="text" maxlength="2" onfocus="this.select()" size="2" value="00" />:<input onfocus="this.select()" type="text" maxlength="2" size="2" value="00"/>:<input onfocus="this.select()" value="00" type="text" maxlength="2" size="2"/>
+      </div>
+      <div class="check-box">&nbsp;</div>
+      <div class="form-title form-title2">End Date:</div>
+      <div class="date-box">
+        <input type="text" class="inputtext" />
+      </div>
+    </div>
+    <div class="form-line">
+      <div class="form-title">Output folder:</div>
+      <div class="form-file-box">
+        <input type='text' name='textfield' id='textfield' class='inputtext' />
+        <a class="a-btn bg">Browse</a>
+        <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+      </div>
+    </div>
+    <div class="button-box"><a class="a-btn bg">Add Server</a><a class="a-btn bg layer-close">Cancel</a></div>
+  </div>
+</div>
+<div class="main">
+  <div class="header">Logo</div>
+  <div class="breadcrumb"><span class="processing">Processing:2</span><span class="pending">Pending:3</span><span class="finished">Finished:1</span> <a class="a-btn bg" id="addServer">Add Server</a></div>
+  <div class="content">
+    <table width="100%">
+      <tr>
+        <th width="30%" class="bg">Task Name</th>
+        <th width="15%" class="bg">Star Time</th>
+        <th width="15%" class="bg">Finish Time</th>
+        <th width="10%" class="bg">Status</th>
+        <th width="30%" class="bg"></th>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td><a class="a-btn bg">Play</a><a class="a-btn bg">Edit</a><a class="a-btn bg" onclick="$.fn.comfirm({title:'提示信息',msg:'是否要删除这条信息？',ok:'确认',cancel:'取消',callback:function(){$.fn.alert({title:'提示信息',msg:'已经成功删除！',ok:'确认'})}})">Delete</a></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-23 16:00</td>
+        <td>2013-9-23 16:00</td>
+        <td><span class="processing">Finished</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-13 16:00</td>
+        <td>2013-9-13 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr class="tr-hover">
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="text-align:left">The Voice</td>
+        <td>2013-9-3 16:00</td>
+        <td>2013-9-3 16:00</td>
+        <td><span class="pending">Pending</span></td>
+        <td></td>
+      </tr>
+    </table>
+    <div class="page">
+        <ul>
+          <li class="prev disabled"><a>Prev</a></li>
+          <li class="num selected"><a>1</a></li>
+          <li class="num"><a>2</a></li>
+          <li class="num"><a>3</a></li>
+          <li class="num"><a>4</a></li>
+          <li class="num"><a>5</a></li>
+          <li class="next"><a>Next</a></li>
+          <li class="page-page">Page</li>
+          <li class="go">
+            <input class="text" type="text" value="1">
+            <a class="a-btn">GO</a>
+          </li>
+          <li> of 5</li>
+        </ul>
+    </div>
+  </div>
+  <div class="footer">
+  <p>Copyright © 2013 Vobile, Inc. All rights reserved.</p>
+	<p><a href="#" target="_blank">About Vobile</a> | <a href="#" target="_blank">Contact Us</a></p>
+  </div>
+</div>
+</body>
+</html>
