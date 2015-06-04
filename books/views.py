@@ -44,7 +44,7 @@ def contact(request):
             send_mail(
                 request.POST['subject'],
                 request.POST['message'],
-                request.POST.get('e-mail', 'li_yun@vobile.cn'),
+                request.POST.get('e-mail', 'li_yun@163.com'),
                 ['szqh97@163.com'],
             )
             return HttpResponseRedirect('/hello/')
